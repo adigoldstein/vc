@@ -1,0 +1,22 @@
+
+<div class="prod-info" *ngIf="selectedProduct">
+  <h2>{{selectedProduct.name}}</h2>
+  <img class="image" src="https://via.placeholder.com/120?text={{selectedProduct.name}}" alt="{{selectedProduct.name}}">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      Name:
+      <input type="text" formControlName="name">
+    </label>
+    <label>
+      Description:
+      <textarea formControlName="desc"></textarea>
+    </label>
+    <label>
+      price:
+      <input type="number" formControlName="price">
+    </label>
+
+    <button [disabled]="!form.valid">Save</button>
+
+  </form>
+</div>

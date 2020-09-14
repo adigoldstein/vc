@@ -1,0 +1,28 @@
+<div class="list-container">
+  <div class="top-bar">
+    <button>Add</button>
+    <input type="text" placeholder="Search"(keyup)="onChangeEvent($event)"/>
+    <div class="sort">
+      <span>sort by</span>
+      <select name="sort">
+        <option value="1"> Recently added</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="list-display">
+    <div class="product" *ngFor="let product of productList" (click)="onSelectProductClickHander(product)">
+      <div class="image-text">
+      <img src="https://via.placeholder.com/120?text={{product.name}}" alt="{{product.name}}">
+      <div class="title-and-desc">
+        <span class="title">{{product.name}}</span>
+        <span class="desc">{{product.desc}}</span>
+      </div>
+      </div>
+      <div class="btns">
+        <button (click)="onDeleteProduct(product.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+</div>
